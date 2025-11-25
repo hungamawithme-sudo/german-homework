@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>A1 – Begrüßen, sich vorstellen</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        h1 { color: #1e3a8a; }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 6px #ccc;
+        }
+        .question { margin-bottom: 10px; }
+        input, select {
+            padding: 7px;
+            margin-top: 5px;
+            width: 240px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .correct { color: green; font-weight: bold; }
+        .wrong { color: red; font-weight: bold; }
+    </style>
+</head>
+
+<body>
+
+<h1>A1 Kapitel 1 – Begrüßen, sich vorstellen</h1>
+
+<!-- ------------------------------------------------------- -->
+<!-- AUDIO SECTION                                            -->
+<!-- ------------------------------------------------------- -->
+<div class="card">
+    <h2>🔊 Aufgabe b – Audio hören</h2>
+    <p>Hören Sie die Dialoge (1.3–6) und ordnen Sie die Bilder zu.</p>
+
+    <audio controls>
+        <source src="audio13-6.mp3" type="audio/mpeg">
+    </audio>
+
+    <br><br>
+    <label>Dialog 1 →</label>
+    <select id="dialog1">
+        <option value="">— auswählen —</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br><br>
+
+    <label>Dialog 2 →</label>
+    <select id="dialog2">
+        <option value="">— auswählen —</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+
+    <p>(You can set correct answers later when you know the audio.)</p>
+</div>
+
+<!-- ------------------------------------------------------- -->
+<!-- FORMAL / INFORMAL                                        -->
+<!-- ------------------------------------------------------- -->
+<div class="card">
+    <h2>Aufgabe c – Sie oder du?</h2>
+
+    <p>1. <select id="c1">
+        <option value="">— auswählen —</option>
+        <option value="Sie">Sie</option>
+        <option value="du">du</option>
+    </select></p>
+
+    <p>2. <select id="c2">
+        <option value="">— auswählen —</option>
+        <option value="Sie">Sie</option>
+        <option value="du">du</option>
+    </select></p>
+
+    <p>3. <select id="c3">
+        <option value="">— auswählen —</option>
+        <option value="Sie">Sie</option>
+        <option value="du">du</option>
+    </select></p>
+
+    <p>4. <select id="c4">
+        <option value="">— auswählen —</option>
+        <option value="Sie">Sie</option>
+        <option value="du">du</option>
+    </select></p>
+
+    <button onclick="checkC()">Check</button>
+    <p id="cResult"></p>
+</div>
+
+<!-- ------------------------------------------------------- -->
+<!-- FILL IN THE BLANKS – AUFGABE d                           -->
+<!-- ------------------------------------------------------- -->
+<div class="card">
+    <h2>Aufgabe d – Ergänzen Sie</h2>
+
+    <p>1. Guten Tag. Ich heiße Tobias Lang. Wie heißen _____ ?  
+        <input id="d1">
+    </p>
+
+    <p>2. Hallo. Ich heiße Pia. Und wer bist _____ ?  
+        <input id="d2">
+    </p>
+
+    <p>3. Entschuldigung, wie heißen _____ , bitte?  
+        <input id="d3">
+    </p>
+
+    <p>4. Wie heißt _____ ? Ich bin Maria.  
+        <input id="d4">
+    </p>
+
+    <button onclick="checkD()">Check</button>
+    <p id="dResult"></p>
+</div>
+
+<!-- ------------------------------------------------------- -->
+<!-- AUFGABE e – COMPLETION                                   -->
+<!-- ------------------------------------------------------- -->
+<div class="card">
+    <h2>Aufgabe e – Ergänzen Sie</h2>
+
+    <p>1. Hallo, ich bin Maria. Und das _____ Klara.  
+        <input id="e1">
+    </p>
+
+    <p>2. Guten Tag! Mein Name _____ Tina Kleber.  
+        <input id="e2">
+    </p>
+
+    <p>3. Guten Abend. Ich heiße Daniel Beck. Und wer _____ Sie?  
+        <input id="e3">
+    </p>
+
+    <p>4. Guten Morgen. Mein Name _____ Anne. Und wer _____ du?  
+        <input id="e4">
+    </p>
+
+    <button onclick="checkE()">Check</button>
+    <p id="eResult"></p>
+</div>
+
+<!-- ------------------------------------------------------- -->
+<!-- JAVASCRIPT CHECKING SYSTEM                                -->
+<!-- ------------------------------------------------------- -->
+<script>
+function checkC() {
+    let correct = ["Sie", "du", "Sie", "du"];
+    let user = [
+        document.getElementById("c1").value,
+        document.getElementById("c2").value,
+        document.getElementById("c3").value,
+        document.getElementById("c4").value
+    ];
+
+    let score = 0;
+    for (let i = 0; i < 4; i++) if (user[i] === correct[i]) score++;
+
+    document.getElementById("cResult").innerHTML =
+        "Score: " + score + "/4";
+}
+
+function checkD() {
+    let correct = ["Sie", "du", "Sie", "du"];
+    let user = [
+        d1.value.trim(),
+        d2.value.trim(),
+        d3.value.trim(),
+        d4.value.trim()
+    ];
+
+    let score = 0;
+    for (let i = 0; i < 4; i++) if (user[i].toLowerCase() === correct[i].toLowerCase()) score++;
+
+    dResult.innerHTML = "Score: " + score + "/4";
+}
+
+function checkE() {
+    let correct = ["ist", "ist", "sind", "bist"];
+    let user = [
+        e1.value.trim(),
+        e2.value.trim(),
+        e3.value.trim(),
+        e4.value.trim()
+    ];
+
+    let score = 0;
+    for (let i = 0; i < 4; i++) if (user[i].toLowerCase() === correct[i].toLowerCase()) score++;
+
+    eResult.innerHTML = "Score: " + score + "/4";
+}
+</script>
+
+<div class="box">
+    <h2>Hören Sie und ordnen Sie die Dialoge den Bildern zu.</h2>
+    <p>(Use the audio and match Dialogue 1–4 with A–D)</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+        <div>
+            <p><strong>A</strong></p>
+            <img src="/mnt/data/A.png" width="250">
+        </div>
+
+        <div>
+            <p><strong>B</strong></p>
+            <img src="/mnt/data/B.png" width="250">
+        </div>
+
+        <div>
+            <p><strong>C</strong></p>
+            <img src="/mnt/data/C.png" width="250">
+        </div>
+
+        <div>
+            <p><strong>D</strong></p>
+            <img src="/mnt/data/D.png" width="250">
+        </div>
+
+    </div>
+
+    <br>
+
+    <p><strong>Ihre Antworten:</strong></p>
+    <p>1 → <input id="match1" type="text" style="width:50px"></p>
+    <p>2 → <input id="match2" type="text" style="width:50px"></p>
+    <p>3 → <input id="match3" type="text" style="width:50px"></p>
+    <p>4 → <input id="match4" type="text" style="width:50px"></p>
+
+    <button onclick="checkMatch()">Check</button>
+    <p id="matchResult"></p>
+</div>
+
+<script>
+function checkMatch() {
+    // You will later give me the real correct answers
+    let correct = ["A", "C", "B", "D"];  // example - replace later!
+
+    let user = [
+        document.getElementById("match1").value.toUpperCase(),
+        document.getElementById("match2").value.toUpperCase(),
+        document.getElementById("match3").value.toUpperCase(),
+        document.getElementById("match4").value.toUpperCase()
+    ];
+
+    let score = 0;
+    for (let i = 0; i < 4; i++) {
+        if (user[i] === correct[i]) score++;
+    }
+
+    document.getElementById("matchResult").innerHTML =
+        "Score: " + score + " / 4";
+}
+</script>
+</body>
+</html>
