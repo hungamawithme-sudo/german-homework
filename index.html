@@ -2,94 +2,195 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>German Homework Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Homework Platform</title>
 
-    <!-- Simple Styling -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 30px;
-            background: #f5f5f5;
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background: #f5f5f5; 
         }
-        h1 {
-            text-align: center;
-            color: #333;
+        header { 
+            background: #1e3a8a; 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
         }
+        nav { 
+            background: #fff; 
+            padding: 10px 20px; 
+            display: flex; 
+            gap: 20px; 
+            border-bottom: 1px solid #ccc; 
+        }
+        nav a { 
+            text-decoration: none; 
+            color: #1e3a8a; 
+            font-weight: bold; 
+        }
+        .container { 
+            padding: 20px; 
+            max-width: 900px; 
+            margin: auto; 
+        }
+        .card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+        }
+        h2 { color: #1e3a8a; }
+
+        /* Interactive exercise styling */
         .box {
-            background: white;
+            background: #fff;
             padding: 20px;
-            margin-bottom: 30px;
             border-radius: 10px;
+            margin-bottom: 20px;
             box-shadow: 0 0 10px #ddd;
         }
         input, select {
             padding: 8px;
-            margin-top: 10px;
             width: 200px;
+            margin-top: 5px;
         }
         button {
             padding: 8px 15px;
-            margin-top: 10px;
             cursor: pointer;
+            margin-top: 10px;
         }
-        .correct {
-            color: green;
-            font-weight: bold;
-        }
-        .wrong {
-            color: red;
-            font-weight: bold;
+        .correct { color: green; font-weight: bold; }
+        .wrong { color: red; font-weight: bold; }
+
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 30px; 
+            color: #555; 
         }
     </style>
 </head>
 
 <body>
 
-<h1>German Learning Homework</h1>
+<header>
+    <h1>German Homework Platform</h1>
+    <p>Custom-coded online learning page</p>
+</header>
 
-<!-- -------------------------- -->
-<!-- 1. Fill in the blanks -->
-<!-- -------------------------- -->
-<div class="box">
-    <h2>Fill in the Blanks</h2>
-    <p>Ich ___ Sahad. (bin)</p>
-    <input id="fill1" type="text">
-    <button onclick="checkFill()">Check</button>
-    <p id="fillResult"></p>
+<nav>
+    <a href="#interactive">Exercises</a>
+    <a href="#a1">A1</a>
+    <a href="#a2">A2</a>
+    <a href="#grammar">Grammar</a>
+    <a href="#listening">Listening</a>
+</nav>
+
+<div class="container">
+
+    <!-- INTERACTIVE SECTION -->
+    <section id="interactive" class="card">
+        <h2>Interactive Exercises</h2>
+
+        <div class="box">
+            <h3>1. Fill in the Blank</h3>
+            <p>Ich ___ Sahad. (bin)</p>
+            <input id="fill1" type="text">
+            <button onclick="checkFill()">Check</button>
+            <p id="fillResult"></p>
+        </div>
+
+        <div class="box">
+            <h3>2. Multiple Choice</h3>
+            <p>Wie sagt man "Good morning" auf Deutsch?</p>
+            <select id="mcq1">
+                <option value="">-- select --</option>
+                <option value="wrong">Gute Nacht</option>
+                <option value="correct">Guten Morgen</option>
+                <option value="wrong">Danke</option>
+            </select>
+            <button onclick="checkMCQ()">Check</button>
+            <p id="mcqResult"></p>
+        </div>
+
+        <div class="box">
+            <h3>3. Vocabulary Check</h3>
+            <p>English meaning of <strong>der Tisch</strong>:</p>
+            <input id="vocab1" type="text" placeholder="Your answer">
+            <button onclick="checkVocab()">Check</button>
+            <p id="vocabResult"></p>
+        </div>
+    </section>
+
+    <!-- A1 SECTION -->
+    <section id="a1" class="card">
+        <h2>A1 Homework</h2>
+
+        <div class="exercise">
+            <strong>1. Introducing Yourself</strong>
+            <p>Write 5 sentences about yourself (name, age, city, hobbies).</p>
+        </div>
+
+        <div class="exercise">
+            <strong>2. Artikel: der / die / das</strong>
+            <ul>
+                <li>___ Tisch</li>
+                <li>___ Lampe</li>
+                <li>___ Auto</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- A2 SECTION -->
+    <section id="a2" class="card">
+        <h2>A2 Homework</h2>
+
+        <div class="exercise">
+            <strong>1. Schreiben</strong>
+            <p>Write a short email (5–6 sentences) inviting a friend to your birthday.</p>
+        </div>
+
+        <div class="exercise">
+            <strong>2. Trennbare Verben</strong>
+            <p>Create 5 sentences using: <em>aufstehen, einkaufen, anrufen, fernsehen</em>.</p>
+        </div>
+    </section>
+
+    <!-- GRAMMAR SECTION -->
+    <section id="grammar" class="card">
+        <h2>Grammar Exercises</h2>
+        <div class="exercise">
+            <strong>Präsens Conjugation</strong>
+            <p>Conjugate the verb <em>"machen"</em> for all pronouns.</p>
+        </div>
+        <div class="exercise">
+            <strong>Perfekt</strong>
+            <p>Write 5 sentences in Perfekt using "haben" and "sein".</p>
+        </div>
+    </section>
+
+    <!-- LISTENING SECTION -->
+    <section id="listening" class="card">
+        <h2>Listening Practice</h2>
+        <p>Play the audio and answer the questions:</p>
+        <audio controls>
+            <source src="audio/lesson1.mp3" type="audio/mpeg">
+        </audio>
+        <ul>
+            <li>Wo wohnt die Person?</li>
+            <li>Was macht sie am Wochenende?</li>
+        </ul>
+    </section>
+
 </div>
 
-<!-- -------------------------- -->
-<!-- 2. Multiple Choice -->
-<!-- -------------------------- -->
-<div class="box">
-    <h2>Multiple Choice</h2>
-    <p>Wie sagt man "Good morning" auf Deutsch?</p>
+<footer>
+    © 2025 German Homework Online – Custom coded
+</footer>
 
-    <select id="mcq1">
-        <option value="">-- select --</option>
-        <option value="wrong">Gute Nacht</option>
-        <option value="correct">Guten Morgen</option>
-        <option value="wrong">Danke</option>
-    </select>
-
-    <button onclick="checkMCQ()">Check</button>
-    <p id="mcqResult"></p>
-</div>
-
-<!-- -------------------------- -->
-<!-- 3. Vocabulary Check -->
-<!-- -------------------------- -->
-<div class="box">
-    <h2>Vocabulary Practice</h2>
-    <p>Write the English meaning: <strong>der Tisch</strong></p>
-    <input id="vocab1" type="text" placeholder="Your answer">
-    <button onclick="checkVocab()">Check</button>
-    <p id="vocabResult"></p>
-</div>
-
-<!-- JavaScript: checking logic -->
 <script>
-    // 1. Fill in the blank
     function checkFill() {
         let answer = document.getElementById("fill1").value.toLowerCase().trim();
         let result = document.getElementById("fillResult");
@@ -103,7 +204,6 @@
         }
     }
 
-    // 2. Multiple choice
     function checkMCQ() {
         let selected = document.getElementById("mcq1").value;
         let result = document.getElementById("mcqResult");
@@ -117,7 +217,6 @@
         }
     }
 
-    // 3. Vocabulary
     function checkVocab() {
         let answer = document.getElementById("vocab1").value.toLowerCase().trim();
         let result = document.getElementById("vocabResult");
