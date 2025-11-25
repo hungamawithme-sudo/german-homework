@@ -86,15 +86,143 @@
     <a href="#a1">A1 GERMAN Exercise</a>
 </nav>
 
-
-
 </div>
 
 <footer>
     © 2025 German Homework Online – Created by Sahad,JNU
 </footer>
-
-
-
 </body>
+    <body>
+
+<h1>Kapitel {{NUM}} – (Thema placeholder)</h1>
+
+<!-- AUDIO -->
+<div class="box">
+    <h2>🔊 Audio (Kapitel {{NUM}})</h2>
+    <!-- upload your audio to: audio/kapitel{{NUM}}.mp3 -->
+    <audio controls>
+        <source src="audio/kapitel{{NUM}}.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p><strong>Hörverständnis:</strong></p>
+    <p>1. Wie heißt die Person?</p>
+    <input id="a1" placeholder="Antwort...">
+
+    <p>2. Nenne ein Wort, das du gehört hast:</p>
+    <input id="a2" placeholder="Antwort...">
+
+    <button onclick="checkAudio()">Antwort prüfen</button>
+    <p id="audioResult"></p>
+</div>
+
+<!-- VIDEO -->
+<div class="box">
+    <h2>🎬 Video (Kapitel {{NUM}})</h2>
+    <!-- upload your video to: video/kapitel{{NUM}}.mp4 -->
+    <video controls width="100%">
+        <source src="video/kapitel{{NUM}}.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p>Frage: Was macht die Person im Video?</p>
+    <input id="v1" placeholder="Antwort...">
+
+    <button onclick="checkVideo()">Antwort prüfen</button>
+    <p id="videoResult"></p>
+</div>
+
+<!-- DIALOG -->
+<div class="box">
+    <h2>💬 Dialog</h2>
+    <p><strong>Person A:</strong> Hallo! Ich heiße Anna.</p>
+    <p><strong>Person B:</strong> Hallo Anna, wie geht's?</p>
+    <p><strong>Person A:</strong> Gut, danke. Und dir?</p>
+</div>
+
+<!-- READING -->
+<div class="box">
+    <h2>📖 Leseverstehen</h2>
+    <p>Lesen Sie den kurzen Text und beantworten Sie die Fragen.</p>
+    <p>Ich heiße Lena. Ich wohne in einer kleinen Stadt. Ich lerne Deutsch.</p>
+
+    <p>1. Wie heißt die Person?</p>
+    <input id="r1" placeholder="Antwort...">
+
+    <p>2. Wo wohnt sie?</p>
+    <input id="r2" placeholder="Antwort...">
+
+    <button onclick="checkReading()">Antwort prüfen</button>
+    <p id="readingResult"></p>
+</div>
+
+<!-- VOCAB -->
+<div class="box">
+    <h2>📘 Wortschatz</h2>
+    <ul>
+        <li><strong>kommen</strong> – to come</li>
+        <li><strong>wohnen</strong> – to live</li>
+        <li><strong>sprechen</strong> – to speak</li>
+    </ul>
+</div>
+
+<!-- EXERCISES -->
+<div class="box">
+    <h2>📝 Übungen</h2>
+    <p>1. Ergänze: Ich ___ Sahad. (sein)</p>
+    <input id="ex1" placeholder="Antwort...">
+
+    <p>2. Wähle das richtige Wort:</p>
+    <select id="ex2">
+        <option value="">-- auswählen --</option>
+        <option value="wrong">Tschüss</option>
+        <option value="correct">Guten Morgen</option>
+        <option value="wrong">Bitte</option>
+    </select>
+
+    <button onclick="checkExercises()">Antwort prüfen</button>
+    <p id="exerciseResult"></p>
+</div>
+
+<script>
+function checkAudio(){
+    const s1 = document.getElementById('a1').value.toLowerCase().trim();
+    // placeholder: expected answer can be customized per chapter after you listen
+    if (s1 === 'lena' || s1 === 'anna' || s1.length > 2) {
+        document.getElementById('audioResult').textContent = '✔ Richtig (Antwort empfangen)';
+        document.getElementById('audioResult').className = 'correct';
+    } else {
+        document.getElementById('audioResult').textContent = '✘ Antwort zu kurz oder falsch';
+        document.getElementById('audioResult').className = 'wrong';
+    }
+}
+
+function checkVideo(){
+    const v = document.getElementById('v1').value.trim();
+    if (v.length > 2) {
+        document.getElementById('videoResult').textContent = '✔ Antwort empfangen';
+        document.getElementById('videoResult').className = 'correct';
+    } else {
+        document.getElementById('videoResult').textContent = '✘ Bitte eine vollständige Antwort eingeben';
+        document.getElementById('videoResult').className = 'wrong';
+    }
+}
+
+function checkReading(){
+    const r1 = document.getElementById('r1').value.toLowerCase().trim();
+    const r2 = document.getElementById('r2').value.toLowerCase().trim();
+    let score = 0;
+    if (r1 === 'lena' || r1 === 'maria' || r1.length > 2) score++;
+    if (r2.length > 2) score++;
+    document.getElementById('readingResult').textContent = 'Score: ' + score + ' / 2';
+}
+
+function checkExercises(){
+    const ex1 = document.getElementById('ex1').value.toLowerCase().trim();
+    const ex2 = document.getElementById('ex2').value;
+    const ok = (ex1 === 'bin' && ex2 === 'correct');
+    document.getElementById('exerciseResult').textContent = ok ? '✔ Alles richtig!' : '✘ Einige Antworten sind falsch.';
+}
+</script>
+
 </html>
