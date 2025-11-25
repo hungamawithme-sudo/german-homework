@@ -3,17 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <!-- Put this snippet in your exam page -->
-<section>
-  <h3>SECTION A — Vocabulary</h3>
-  <ol>
-    <li>Match the words to the pictures (Guten Tag, Hallo, Tschüs, Danke, Wie geht's?, Bitte)</li>
-  </ol>
-</section>
-<!-- Full exam content included in the repo or below as separate sections -->
   <title>Netzwerk A1 — Exam Sheet</title>
+
   <style>
-    :root{--bg:#f7f7fb;--card:#fff;--accent:#d9534f;--muted:#666}
+    :root{--bg:#f7f7fb;--card:#fff;--accent:#1e3a8a;--muted:#666}
     body{font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);margin:0;padding:32px;color:#111}
     .container{max-width:900px;margin:0 auto}
     header{display:flex;align-items:center;gap:16px}
@@ -21,17 +14,18 @@
     h1{margin:.2rem 0 0;font-size:1.6rem}
     p.lead{margin:.2rem 0 1rem;color:var(--muted)}
     .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(15,15,15,0.06);margin-bottom:16px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    label{font-weight:600}
     .small{font-size:.9rem;color:var(--muted)}
     pre.code{background:#0b1220;color:#dff7e0;padding:12px;border-radius:6px;overflow:auto}
     .download{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none}
-    footer{margin-top:18px;color:var(--muted);font-size:.9rem}
-    @media (max-width:720px){.grid{grid-template-columns:1fr}}
+    footer{margin-top:18px;color:var(--muted);font-size:.9rem;text-align:center}
   </style>
 </head>
+
 <body>
+
   <div class="container">
+
+    <!-- HEADER -->
     <header>
       <img src="https://raw.githubusercontent.com/github/explore/main/topics/germany/germany.png" alt="germany">
       <div>
@@ -40,14 +34,16 @@
       </div>
     </header>
 
+    <!-- PDF DOWNLOAD -->
     <div class="card">
       <h2>Download original workbook (PDF)</h2>
-      <p class="small">Note: this link points to the uploaded file path on the runner. Your deployment may need the file hosted in the repo or assets folder.</p>
-      <p><a class="download" href="/mnt/data/orginal workbook netzwerk-5-16.pdf" target="_blank">Open original PDF</a></p>
+      <p class="small">This link should point to your repo file. Update as needed.</p>
+      <p><a class="download" href="orginal workbook netzwerk-5-16.pdf" target="_blank">Open original PDF</a></p>
     </div>
 
+    <!-- EXAM SECTIONS LIST -->
     <div class="card">
-      <h2>Exam sections included</h2>
+      <h2>Exam Sections Included</h2>
       <ul>
         <li>Vocabulary (greetings, thanks, bye)</li>
         <li>Short dialogues &amp; formal/informal practice</li>
@@ -55,79 +51,80 @@
         <li>Conjugation: heißen / kommen / wohnen / sein</li>
         <li>Zahlen (0–20) &amp; Telefonnummern</li>
         <li>Alphabet &amp; spelling</li>
-        <li>Short writing task (6–8 Sätze)</li>
+        <li>Short writing task (6–8 sentences)</li>
       </ul>
     </div>
 
+    <!-- EXAM SNIPPET -->
     <div class="card">
-      <h2>Embed: Ready-to-copy HTML exam (for GitHub Pages)</h2>
-      <p class="small">Copy the HTML below to <code>index.html</code> in a GitHub repo and publish with GitHub Pages.</p>
-      <pre class="code">&lt;!-- Put this snippet in your exam page --&gt;
-&lt;section&gt;
-  &lt;h3&gt;SECTION A — Vocabulary&lt;/h3&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Match the words to the pictures (Guten Tag, Hallo, Tschüs, Danke, Wie geht's?, Bitte)&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/section&gt;
-&lt;!-- Full exam content included in the repo or below as separate sections --&gt;
-</pre>
+      <h2>Embed: Ready-to-copy HTML exam snippet</h2>
+      <pre class="code">
+<section>
+  <h3>SECTION A — Vocabulary</h3>
+  <ol>
+    <li>Match the words to the pictures (Guten Tag, Hallo, Tschüs, Danke, Wie geht's?, Bitte)</li>
+  </ol>
+</section>
+      </pre>
     </div>
 
+    <!-- GITHUB PAGES INSTRUCTIONS -->
     <div class="card">
-      <h2>How to use on GitHub</h2>
+      <h2>How to Use on GitHub</h2>
       <ol>
-        <li>Create a new repository (public or private).</li>
-        <li>Add this <code>index.html</code> file (or copy the code from the canvas).</li>
-        <li>Commit your PDF file into the repo (e.g. <code>assets/netzwerk.pdf</code>) and update the link above to point to <code>/assets/netzwerk.pdf</code>.</li>
-        <li>Enable GitHub Pages from the repo settings (branch: main / root).</li>
+        <li>Upload <code>index.html</code> to your repository.</li>
+        <li>Upload your PDF file (place in root or /assets/ folder).</li>
+        <li>Update the link above if you move the PDF.</li>
+        <li>Enable GitHub Pages: Settings → Pages → Branch: main → /root.</li>
       </ol>
     </div>
 
-    <footer class="card">
-      <strong>Next steps:</strong> In the canvas I created a complete <code>index.html</code> file with the full exam layout. Open the file named <em>netzwerk_exam_index.html</em> in the canvas to copy the HTML or download it. Tell me if you want a ZIP with the PDF and index.html ready for upload to GitHub.
+    <!-- FULL MERGED EXAM CONTENT -->
+    <section class="container">
+      <h2>FULL EXAM CONTENT</h2>
+
+      <div class="card">
+        <h3>SECTION A — Vocabulary</h3>
+        <p>Match the words to the pictures: Guten Tag, Hallo, Tschüs, Danke, Wie geht's?, Bitte.</p>
+      </div>
+
+      <div class="card">
+        <h3>SECTION B — Dialogues</h3>
+        <p>Fill in the blanks and mark formal/informal usage.</p>
+      </div>
+
+      <div class="card">
+        <h3>SECTION C — Herkunft & Länder</h3>
+        <p>Questions about origin, residence, languages.</p>
+      </div>
+
+      <div class="card">
+        <h3>SECTION D — Verbs</h3>
+        <p>Conjugation of heißen, kommen, wohnen, sein.</p>
+      </div>
+
+      <div class="card">
+        <h3>SECTION E — Zahlen</h3>
+        <p>Numbers 0–20 and telephone numbers.</p>
+      </div>
+
+      <div class="card">
+        <h3>SECTION F — Alphabet</h3>
+        <p>German alphabet spelling practice.</p>
+      </div>
+
+      <div class="card">
+        <h3>SECTION G — Writing Task</h3>
+        <p>Write 6–8 sentences introducing yourself.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 German Homework Online – Created by Sahad, JNU
     </footer>
+
   </div>
-  <!-- Merged Exam Content -->
-  <section class="container">
-    <h2>Netzwerk A1 — Exam (Lektion 1)</h2>
-    <div class="card">
-      <h3>SECTION A — Vocabulary</h3>
-      <p>Match the words to the pictures: Guten Tag, Hallo, Tschüs, Danke, Wie geht's?, Bitte.</p>
-    </div>
 
-    <div class="card">
-      <h3>SECTION B — Dialogues</h3>
-      <p>Fill in the blanks and mark formal/informal usage.</p>
-    </div>
-
-    <div class="card">
-      <h3>SECTION C — Herkunft & Länder</h3>
-      <p>Questions about origin, residence, languages.</p>
-    </div>
-
-    <div class="card">
-      <h3>SECTION D — Verbs</h3>
-      <p>Conjugation of heißen, kommen, wohnen, sein.</p>
-    </div>
-
-    <div class="card">
-      <h3>SECTION E — Zahlen</h3>
-      <p>Numbers 0–20 and telephone numbers.</p>
-    </div>
-
-    <div class="card">
-      <h3>SECTION F — Alphabet</h3>
-      <p>German alphabet spelling practice.</p>
-    </div>
-
-    <div class="card">
-      <h3>SECTION G — Writing Task</h3>
-      <p>Write 6–8 sentences introducing yourself.</p>
-    </div>
-  </section>
-
-<footer>
-    © 2025 German Homework Online – Created by Sahad, JNU
-</footer>
 </body>
 </html>
