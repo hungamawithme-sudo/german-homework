@@ -93,136 +93,406 @@
     <body>
 
 <h1>Kapitel 1</h1>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Kapitel 1 — Workbook Activities (1.2–1.8)</title>
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;margin:0;padding:20px}
+  header{background:#1e3a8a;color:#fff;padding:14px;border-radius:8px}
+  h1,h2{margin:6px 0;color:#1e3a8a}
+  .container{max-width:980px;margin:18px auto}
+  .card{background:#fff;padding:16px;border-radius:8px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+  label{display:block;margin:8px 0 4px}
+  input[type="text"], textarea, select {padding:8px;width:100%;max-width:680px;border:1px solid #d0d6df;border-radius:6px}
+  button{background:#1e3a8a;color:#fff;padding:8px 12px;border:0;border-radius:6px;cursor:pointer;margin-top:8px}
+  .correct{color:green;font-weight:700}
+  .wrong{color:red;font-weight:700}
+  .hint{font-size:0.95em;color:#666;margin-top:6px}
+  .pdf-link{word-break:break-all;color:#1e3a8a}
+  audio{width:100%;max-width:680px;margin-top:8px}
+  .flex-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .small{max-width:120px}
+  pre{background:#fff;padding:10px;border-radius:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Kapitel 1 — Workbook Activities (1.2 → 1.8)</h1>
+  <div style="font-size:0.95em;margin-top:6px">Workbook reference (your uploaded PDF): <a class="pdf-link" href="/mnt/data/orginal workbook netzwerk-5-16.pdf" target="_blank">/mnt/data/orginal workbook netzwerk-5-16.pdf</a>. </div>
+</header>
 
-<!-- AUDIO -->
-<div class="box">
-    <h2>🔊 Audio (Kapitel {{NUM}})</h2>
-    <!-- upload your audio to: audio/kapitel{{NUM}}.mp3 -->
+<div class="container">
+
+  <!-- 1.2 a,b,c -->
+  <section class="card" id="s-1-2">
+    <h2>1.2 — (a) (b) (c) — Listening / Short answer</h2>
+    <p class="hint">Open the workbook page in the link above to see the original exercise. Play the audio and answer the questions below.</p>
+
     <audio controls>
-        <source src="audio/kapitel{{NUM}}.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+      <!-- place your audio: audio/kap1_1-2a.mp3 -->
+      <source src="audio/kap1_1-2a.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
     </audio>
 
-    <p><strong>Hörverständnis:</strong></p>
-    <p>1. Wie heißt die Person?</p>
-    <input id="a1" placeholder="Antwort...">
+    <label>1.2a — Frage 1 (short answer)</label>
+    <input type="text" id="q_1_2_a_1" placeholder="Antwort eingeben...">
 
-    <p>2. Nenne ein Wort, das du gehört hast:</p>
-    <input id="a2" placeholder="Antwort...">
+    <label>1.2b — Frage 2 (short answer)</label>
+    <input type="text" id="q_1_2_b_1" placeholder="Antwort eingeben...">
 
-    <button onclick="checkAudio()">Antwort prüfen</button>
-    <p id="audioResult"></p>
-</div>
+    <label>1.2c — Frage 3 (short answer)</label>
+    <input type="text" id="q_1_2_c_1" placeholder="Antwort eingeben...">
 
-<!-- VIDEO -->
-<div class="box">
-    <h2>🎬 Video (Kapitel {{NUM}})</h2>
-    <!-- upload your video to: video/kapitel{{NUM}}.mp4 -->
-    <video controls width="100%">
-        <source src="video/kapitel{{NUM}}.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <div class="flex-row">
+      <button onclick="check_1_2()">Check 1.2</button>
+      <div id="result_1_2" style="margin-left:8px"></div>
+    </div>
+  </section>
 
-    <p>Frage: Was macht die Person im Video?</p>
-    <input id="v1" placeholder="Antwort...">
+  <!-- 1.3 a,b,c,d,e -->
+  <section class="card" id="s-1-3">
+    <h2>1.3 — (a)–(e) — Dialog ordering and comprehension</h2>
+    <p class="hint">Listen and match or order short dialogues. Play the audio and answer.</p>
 
-    <button onclick="checkVideo()">Antwort prüfen</button>
-    <p id="videoResult"></p>
-</div>
+    <audio controls>
+      <source src="audio/kap1_1-3_all.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- DIALOG -->
-<div class="box">
-    <h2>💬 Dialog</h2>
-    <p><strong>Person A:</strong> Hallo! Ich heiße Anna.</p>
-    <p><strong>Person B:</strong> Hallo Anna, wie geht's?</p>
-    <p><strong>Person A:</strong> Gut, danke. Und dir?</p>
-</div>
+    <label>1.3a — Which dialogue matches picture A? (enter A/B/C/D)</label>
+    <input type="text" id="q_1_3_a" placeholder="A / B / C / D">
 
-<!-- READING -->
-<div class="box">
-    <h2>📖 Leseverstehen</h2>
-    <p>Lesen Sie den kurzen Text und beantworten Sie die Fragen.</p>
-    <p>Ich heiße Lena. Ich wohne in einer kleinen Stadt. Ich lerne Deutsch.</p>
+    <label>1.3b — Which dialogue matches picture B?</label>
+    <input type="text" id="q_1_3_b" placeholder="A / B / C / D">
 
-    <p>1. Wie heißt die Person?</p>
-    <input id="r1" placeholder="Antwort...">
+    <label>1.3c — Short answer: What greeting is used?</label>
+    <input type="text" id="q_1_3_c">
 
-    <p>2. Wo wohnt sie?</p>
-    <input id="r2" placeholder="Antwort...">
-
-    <button onclick="checkReading()">Antwort prüfen</button>
-    <p id="readingResult"></p>
-</div>
-
-<!-- VOCAB -->
-<div class="box">
-    <h2>📘 Wortschatz</h2>
-    <ul>
-        <li><strong>kommen</strong> – to come</li>
-        <li><strong>wohnen</strong> – to live</li>
-        <li><strong>sprechen</strong> – to speak</li>
-    </ul>
-</div>
-
-<!-- EXERCISES -->
-<div class="box">
-    <h2>📝 Übungen</h2>
-    <p>1. Ergänze: Ich ___ Sahad. (sein)</p>
-    <input id="ex1" placeholder="Antwort...">
-
-    <p>2. Wähle das richtige Wort:</p>
-    <select id="ex2">
-        <option value="">-- auswählen --</option>
-        <option value="wrong">Tschüss</option>
-        <option value="correct">Guten Morgen</option>
-        <option value="wrong">Bitte</option>
+    <label>1.3d — Multiple choice (choose the best completion)</label>
+    <select id="q_1_3_d">
+      <option value="">-- wählen --</option>
+      <option value="opt1">Option 1</option>
+      <option value="opt2">Option 2</option>
+      <option value="opt3">Option 3</option>
     </select>
 
-    <button onclick="checkExercises()">Antwort prüfen</button>
-    <p id="exerciseResult"></p>
+    <label>1.3e — Fill-in: (one-word answer)</label>
+    <input type="text" id="q_1_3_e">
+
+    <div class="flex-row">
+      <button onclick="check_1_3()">Check 1.3</button>
+      <div id="result_1_3" style="margin-left:8px"></div>
+    </div>
+  </section>
+
+  <!-- 1.4 b,c,d,e -->
+  <section class="card" id="s-1-4">
+    <h2>1.4 — (b)–(e) — Reading / True-False / Short answers</h2>
+    <p class="hint">Open workbook page for instructions. If audio is required, upload it as <code>audio/kap1_1-4.mp3</code>.</p>
+
+    <audio controls>
+      <source src="audio/kap1_1-4.mp3" type="audio/mpeg">
+    </audio>
+
+    <label>1.4b — True / False (T/F)</label>
+    <select id="q_1_4_b">
+      <option value="">-- wählen --</option>
+      <option value="T">True</option>
+      <option value="F">False</option>
+    </select>
+
+    <label>1.4c — Short Answer</label>
+    <input type="text" id="q_1_4_c">
+
+    <label>1.4d — Multiple choice</label>
+    <select id="q_1_4_d">
+      <option value="">-- wählen --</option>
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </select>
+
+    <label>1.4e — Fill the blank</label>
+    <input type="text" id="q_1_4_e">
+
+    <div class="flex-row">
+      <button onclick="check_1_4()">Check 1.4</button>
+      <div id="result_1_4" style="margin-left:8px"></div>
+    </div>
+  </section>
+
+  <!-- 1.5 d,f -->
+  <section class="card" id="s-1-5">
+    <h2>1.5 — (d) & (f)</h2>
+    <p class="hint">Grammar drilling / gap-fill and short writing. Use the audio below if needed.</p>
+
+    <audio controls>
+      <source src="audio/kap1_1-5.mp3" type="audio/mpeg">
+    </audio>
+
+    <label>1.5d — Gap-fill (enter word)</label>
+    <input type="text" id="q_1_5_d">
+
+    <label>1.5f — Short sentence (type one sentence)</label>
+    <textarea id="q_1_5_f" rows="3" placeholder="Deinen Satz hier..."></textarea>
+
+    <div class="flex-row">
+      <button onclick="check_1_5()">Check 1.5</button>
+      <div id="result_1_5" style="margin-left:8px"></div>
+    </div>
+  </section>
+
+  <!-- 1.6 c,d -->
+  <section class="card" id="s-1-6">
+    <h2>1.6 — (c) & (d)</h2>
+    <p class="hint">Listening + grammar practice.</p>
+
+    <audio controls>
+      <source src="audio/kap1_1-6.mp3" type="audio/mpeg">
+    </audio>
+
+    <label>1.6c — choose the correct form</label>
+    <select id="q_1_6_c">
+      <option value="">-- wählen --</option>
+      <option value="form1">form1</option>
+      <option value="form2">form2</option>
+    </select>
+
+    <label>1.6d — short answer</label>
+    <input type="text" id="q_1_6_d">
+
+    <div class="flex-row">
+      <button onclick="check_1_6()">Check 1.6</button>
+      <div id="result_1_6" style="margin-left:8px"></div>
+    </div>
+  </section>
+
+  <!-- 1.7 b,c -->
+  <section class="card" id="s-1-7">
+    <h2>1.7 — (b) & (c)</h2>
+    <p class="hint">Conversation practice + roleplay prompts (short answer).</p>
+
+    <label>1.7b — Roleplay prompt: Student answer</label>
+    <input type="text" id="q_1_7_b">
+
+    <label>1.7c — Write reply (one or two sentences)</label>
+    <textarea id="q_1_7_c" rows="3"></textarea>
+
+    <div class="flex-row">
+      <button onclick="check_1_7()">Check 1.7</button>
+      <div id="result_1_7" style="margin-left:8px"></div>
+    </div>
+  </section>
+
+  <!-- 1.8 d,e -->
+  <section class="card" id="s-1-8">
+    <h2>1.8 — (d) & (e)</h2>
+    <p class="hint">Final exercises (listening + comprehension / writing).</p>
+
+    <audio controls>
+      <source src="audio/kap1_1-8.mp3" type="audio/mpeg">
+    </audio>
+
+    <label>1.8d — comprehension (short answer)</label>
+    <input type="text" id="q_1_8_d">
+
+    <label>1.8e — short composition (2–3 sentences)</label>
+    <textarea id="q_1_8_e" rows="3"></textarea>
+
+    <div class="flex-row">
+      <button onclick="check_1_8()">Check 1.8</button>
+      <div id="result_1_8" style="margin-left:8px"></div>
+    </div>
+  </section>
+
+  <!-- Final submit / download (optional) -->
+  <section class="card">
+    <h2>Save / Export Answers (optional)</h2>
+    <p class="hint">You can copy answers manually, or download a JSON of answers to submit to a teacher.</p>
+    <button onclick="exportAnswers()">Download answers (JSON)</button>
+    <pre id="exportArea" style="display:none;background:#f6f8fa;padding:10px;border-radius:6px"></pre>
+  </section>
+
 </div>
 
 <script>
-function checkAudio(){
-    const s1 = document.getElementById('a1').value.toLowerCase().trim();
-    // placeholder: expected answer can be customized per chapter after you listen
-    if (s1 === 'lena' || s1 === 'anna' || s1.length > 2) {
-        document.getElementById('audioResult').textContent = '✔ Richtig (Antwort empfangen)';
-        document.getElementById('audioResult').className = 'correct';
-    } else {
-        document.getElementById('audioResult').textContent = '✘ Antwort zu kurz oder falsch';
-        document.getElementById('audioResult').className = 'wrong';
-    }
+/* ====== Answer key from your Lösungen screenshot (flexible matching) ======
+   I implemented each correct-answer entry as an array of accepted keywords.
+   The checking functions test whether the student's answer contains at least
+   one of the expected keywords (case-insensitive). This handles small
+   variants and punctuation differences.
+========================================================================*/
+
+const ANSWERS = {
+  /* 1.2 (solutions list includes short phrases) */
+  "1_2_a_1": ["danke", "danke gut", "danke, gut", "und dir"],
+  "1_2_b_1": ["ich heiße jakob", "ich heiße jakob", "jakob"],
+  "1_2_c_1": ["tschüs", "tschüs jakob", "tschuss", "tschüß"],
+
+  /* 1.3 — greetings and picture mapping (from Lösungen) */
+  "1_3_a": ["guten morgen", "guten tag", "guten morgen!"],   // A may correspond to Guten Morgen
+  "1_3_b": ["guten tag", "hallo"],                           // B
+  "1_3_c": ["guten nacht","gute nacht","guten abend","ciao","auf wiedersehen"],
+  "1_3_d": ["opt2","option 2"],                              // placeholder: teacher can update
+  "1_3_e": ["sie","du"],
+
+  /* 1.4 — from Lösungen:
+     4b: "2. Wo, 3. Wie, 4. Woher" etc. but we accept keywords */
+  "1_4_b": ["t","f","true","false"], // accept either T/F; teacher will check
+  "1_4_c": ["wo","wie","woher","hamburg"],
+  "1_4_d": ["a","b","c"],
+  "1_4_e": ["heiße","komme","wohne","ist","sind","kommen"],
+
+  /* 1.5 — solutions list (verbs forms) */
+  "1_5_d": ["heißen","wohnen","kommen","kommt","wohnt","ist","wohne"],
+  "1_5_f": ["ich heiße","ich wohne","ich komme","ich bin"],
+
+  /* 1.6 */
+  "1_6_c": ["2 - 4 - 6 - 8","2 4 6 8","form1","1 2 3 4"], // generic accept
+  "1_6_d": ["null","elf","drei","vier","acht","zwanzig","stadt"],
+
+  /* 1_7 */
+  "1_7_b": ["paola","mayer","johanson","korbinian","ich komme aus","ich komme"],
+  "1_7_c": ["entschuldigung","noch einmal bitte","das verstehe ich nicht","bitte","langsam"],
+
+  /* 1_8 */
+  "1_8_d": ["woher kommst","ich spreche","spanisch","amsterdam","schweiz","wien","berlin","österreich"],
+  "1_8_e": ["lorena steiner","max lang","wien","zürich","ich wohne","er kommt","er wohnt"]
+};
+
+/* helper: case-insensitive contains test for arrays of keywords */
+function containsAny(userText, keywords) {
+  if (!userText) return false;
+  const s = userText.toLowerCase();
+  for (const k of keywords) {
+    const kclean = k.toLowerCase().trim();
+    if (kclean === "") continue;
+    // if keyword contains spaces, check if it's fully included
+    if (s.indexOf(kclean) !== -1) return true;
+    // allow small token matches
+    const tokens = kclean.split(/\s+/);
+    if (tokens.length === 1 && s.split(/\W+/).includes(kclean)) return true;
+  }
+  return false;
 }
 
-function checkVideo(){
-    const v = document.getElementById('v1').value.trim();
-    if (v.length > 2) {
-        document.getElementById('videoResult').textContent = '✔ Antwort empfangen';
-        document.getElementById('videoResult').className = 'correct';
-    } else {
-        document.getElementById('videoResult').textContent = '✘ Bitte eine vollständige Antwort eingeben';
-        document.getElementById('videoResult').className = 'wrong';
-    }
+/* helper to show result */
+function showResult(id, score, max) {
+  const el = document.getElementById(id);
+  el.innerHTML = 'Score: ' + score + ' / ' + max;
+  el.className = (score === max) ? 'correct' : 'wrong';
 }
 
-function checkReading(){
-    const r1 = document.getElementById('r1').value.toLowerCase().trim();
-    const r2 = document.getElementById('r2').value.toLowerCase().trim();
-    let score = 0;
-    if (r1 === 'lena' || r1 === 'maria' || r1.length > 2) score++;
-    if (r2.length > 2) score++;
-    document.getElementById('readingResult').textContent = 'Score: ' + score + ' / 2';
+/* 1.2 */
+function check_1_2(){
+  const a = document.getElementById('q_1_2_a_1').value.trim();
+  const b = document.getElementById('q_1_2_b_1').value.trim();
+  const c = document.getElementById('q_1_2_c_1').value.trim();
+  let score = 0;
+  if (containsAny(a, ANSWERS['1_2_a_1'])) score++;
+  if (containsAny(b, ANSWERS['1_2_b_1'])) score++;
+  if (containsAny(c, ANSWERS['1_2_c_1'])) score++;
+  showResult('result_1_2', score, 3);
 }
 
-function checkExercises(){
-    const ex1 = document.getElementById('ex1').value.toLowerCase().trim();
-    const ex2 = document.getElementById('ex2').value;
-    const ok = (ex1 === 'bin' && ex2 === 'correct');
-    document.getElementById('exerciseResult').textContent = ok ? '✔ Alles richtig!' : '✘ Einige Antworten sind falsch.';
+/* 1.3 */
+function check_1_3(){
+  const a = document.getElementById('q_1_3_a').value.trim();
+  const b = document.getElementById('q_1_3_b').value.trim();
+  const c = document.getElementById('q_1_3_c').value.trim();
+  const d = document.getElementById('q_1_3_d').value;
+  const e = document.getElementById('q_1_3_e').value.trim();
+  let score = 0;
+  if (containsAny(a, ANSWERS['1_3_a'])) score++;
+  if (containsAny(b, ANSWERS['1_3_b'])) score++;
+  if (containsAny(c, ANSWERS['1_3_c'])) score++;
+  if (d && d.toLowerCase().indexOf((ANSWERS['1_3_d'][0]||'').toLowerCase()) !== -1) score++;
+  if (containsAny(e, ANSWERS['1_3_e'])) score++;
+  showResult('result_1_3', score, 5);
+}
+
+/* 1.4 */
+function check_1_4(){
+  const b = document.getElementById('q_1_4_b').value.trim();
+  const c = document.getElementById('q_1_4_c').value.trim();
+  const d = document.getElementById('q_1_4_d').value;
+  const e = document.getElementById('q_1_4_e').value.trim();
+  let score = 0;
+  // for 4b accept T or F or equivalents if in ANSWERS; here we just check non-empty
+  if (b !== "") score++;
+  if (containsAny(c, ANSWERS['1_4_c'])) score++;
+  if (d !== "") score++;
+  if (containsAny(e, ANSWERS['1_4_e'])) score++;
+  showResult('result_1_4', score, 4);
+}
+
+/* 1.5 */
+function check_1_5(){
+  const d = document.getElementById('q_1_5_d').value.trim();
+  const f = document.getElementById('q_1_5_f').value.trim();
+  let score = 0;
+  if (containsAny(d, ANSWERS['1_5_d'])) score++;
+  if (containsAny(f, ANSWERS['1_5_f'])) score++;
+  showResult('result_1_5', score, 2);
+}
+
+/* 1.6 */
+function check_1_6(){
+  const c = document.getElementById('q_1_6_c').value;
+  const d = document.getElementById('q_1_6_d').value.trim();
+  let score = 0;
+  if (c !== "") score++; // teacher may refine
+  if (containsAny(d, ANSWERS['1_6_d'])) score++;
+  showResult('result_1_6', score, 2);
+}
+
+/* 1.7 */
+function check_1_7(){
+  const b = document.getElementById('q_1_7_b').value.trim();
+  const c = document.getElementById('q_1_7_c').value.trim();
+  let score = 0;
+  if (containsAny(b, ANSWERS['1_7_b'])) score++;
+  if (containsAny(c, ANSWERS['1_7_c'])) score++;
+  showResult('result_1_7', score, 2);
+}
+
+/* 1.8 */
+function check_1_8(){
+  const d = document.getElementById('q_1_8_d').value.trim();
+  const e = document.getElementById('q_1_8_e').value.trim();
+  let score = 0;
+  if (containsAny(d, ANSWERS['1_8_d'])) score++;
+  if (containsAny(e, ANSWERS['1_8_e'])) score++;
+  showResult('result_1_8', score, 2);
+}
+
+/* export answers as JSON */
+function exportAnswers(){
+  const data = {
+    '1.2': { a: document.getElementById('q_1_2_a_1').value, b: document.getElementById('q_1_2_b_1').value, c: document.getElementById('q_1_2_c_1').value },
+    '1.3': { a: document.getElementById('q_1_3_a').value, b: document.getElementById('q_1_3_b').value, c: document.getElementById('q_1_3_c').value, d: document.getElementById('q_1_3_d').value, e: document.getElementById('q_1_3_e').value },
+    '1.4': { b: document.getElementById('q_1_4_b').value, c: document.getElementById('q_1_4_c').value, d: document.getElementById('q_1_4_d').value, e: document.getElementById('q_1_4_e').value },
+    '1.5': { d: document.getElementById('q_1_5_d').value, f: document.getElementById('q_1_5_f').value },
+    '1.6': { c: document.getElementById('q_1_6_c').value, d: document.getElementById('q_1_6_d').value },
+    '1.7': { b: document.getElementById('q_1_7_b').value, c: document.getElementById('q_1_7_c').value },
+    '1.8': { d: document.getElementById('q_1_8_d').value, e: document.getElementById('q_1_8_e').value }
+  };
+  const json = JSON.stringify(data, null, 2);
+  const blob = new Blob([json], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'kapitel1_answers.json'; document.body.appendChild(a); a.click();
+  setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 2000);
 }
 </script>
+
+</body>
+</html>
+
 <footer>
     © 2025 German Homework Online – Created by Sahad,JNU
 </footer>
+    </body>
 </html>
