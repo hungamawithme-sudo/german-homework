@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>German Homework Practice</title>
+
+    <!-- Simple Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ddd;
+        }
+        input, select {
+            padding: 8px;
+            margin-top: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>German Learning Homework</h1>
+
+<!-- -------------------------- -->
+<!-- 1. Fill in the blanks -->
+<!-- -------------------------- -->
+<div class="box">
+    <h2>Fill in the Blanks</h2>
+    <p>Ich ___ Sahad. (bin)</p>
+    <input id="fill1" type="text">
+    <button onclick="checkFill()">Check</button>
+    <p id="fillResult"></p>
+</div>
+
+<!-- -------------------------- -->
+<!-- 2. Multiple Choice -->
+<!-- -------------------------- -->
+<div class="box">
+    <h2>Multiple Choice</h2>
+    <p>Wie sagt man "Good morning" auf Deutsch?</p>
+
+    <select id="mcq1">
+        <option value="">-- select --</option>
+        <option value="wrong">Gute Nacht</option>
+        <option value="correct">Guten Morgen</option>
+        <option value="wrong">Danke</option>
+    </select>
+
+    <button onclick="checkMCQ()">Check</button>
+    <p id="mcqResult"></p>
+</div>
+
+<!-- -------------------------- -->
+<!-- 3. Vocabulary Check -->
+<!-- -------------------------- -->
+<div class="box">
+    <h2>Vocabulary Practice</h2>
+    <p>Write the English meaning: <strong>der Tisch</strong></p>
+    <input id="vocab1" type="text" placeholder="Your answer">
+    <button onclick="checkVocab()">Check</button>
+    <p id="vocabResult"></p>
+</div>
+
+<!-- JavaScript: checking logic -->
+<script>
+    // 1. Fill in the blank
+    function checkFill() {
+        let answer = document.getElementById("fill1").value.toLowerCase().trim();
+        let result = document.getElementById("fillResult");
+
+        if (answer === "bin") {
+            result.innerHTML = "✔ Correct!";
+            result.className = "correct";
+        } else {
+            result.innerHTML = "✘ Wrong. The correct answer is: bin";
+            result.className = "wrong";
+        }
+    }
+
+    // 2. Multiple choice
+    function checkMCQ() {
+        let selected = document.getElementById("mcq1").value;
+        let result = document.getElementById("mcqResult");
+
+        if (selected === "correct") {
+            result.innerHTML = "✔ Correct!";
+            result.className = "correct";
+        } else {
+            result.innerHTML = "✘ Wrong.";
+            result.className = "wrong";
+        }
+    }
+
+    // 3. Vocabulary
+    function checkVocab() {
+        let answer = document.getElementById("vocab1").value.toLowerCase().trim();
+        let result = document.getElementById("vocabResult");
+
+        if (answer === "table") {
+            result.innerHTML = "✔ Correct!";
+            result.className = "correct";
+        } else {
+            result.innerHTML = "✘ Wrong. Correct answer: table";
+            result.className = "wrong";
+        }
+    }
+</script>
+
+</body>
+</html>
