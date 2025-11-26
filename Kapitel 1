@@ -1,178 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Kapitel 1 – Guten Tag!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-        h1, h2 { color: #1e3a8a; }
-        .box {
-            background: #fff; padding: 20px; margin-bottom: 25px;
-            border-radius: 10px; box-shadow: 0 0 8px #ddd;
-        }
-        input, button, textarea, select {
-            padding: 8px; margin-top: 8px; width: 100%; max-width: 350px;
-        }
-        button {
-            background: #1e3a8a; color: white; border: none; border-radius: 5px;
-        }
-        .correct { color: green; font-weight: bold; }
-        .wrong { color: red; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kapitel 1 – Guten Tag!</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Kapitel 1 – Guten Tag!</h1>
+<div class="container">
 
-<!-- AUDIO ----------------------- -->
-<div class="box">
-    <h2>🔊 Audio: Begrüßung</h2>
+  <header>
+    <h1>Kapitel 1 – Guten Tag!</h1>
+    <p class="lead">Mit Audio, Video und interaktiven Übungen</p>
+  </header>
+
+  <!-- AUDIO -->
+  <div class="card">
+    <h2>🔊 Audio Übung</h2>
     <audio controls>
-        <source src="audio/kapitel1.mp3" type="audio/mpeg">
+      <source src="assets/audio/kapitel1.mp3" type="audio/mpeg">
     </audio>
 
-    <p><strong>Hörverständnis-Fragen:</strong></p>
-
     <p>1. Wie heißt die Person?</p>
-    <input id="a1" placeholder="deine Antwort">
+    <input id="a1">
 
     <p>2. Woher kommt die Person?</p>
-    <input id="a2" placeholder="deine Antwort">
+    <input id="a2">
 
-    <button onclick="checkAudio()">Antwort prüfen</button>
+    <button onclick="checkAudio()">Prüfen</button>
     <p id="audioResult"></p>
-</div>
+  </div>
 
-<!-- VIDEO ----------------------- -->
-<div class="box">
-    <h2>🎬 Video: Sich vorstellen</h2>
-
+  <!-- VIDEO -->
+  <div class="card">
+    <h2>🎬 Video Übung</h2>
     <video controls width="100%">
-        <source src="video/kapitel1.mp4" type="video/mp4">
+      <source src="assets/video/kapitel1.mp4" type="video/mp4">
     </video>
 
-    <p><strong>Fragen zum Video:</strong></p>
-
-    <p>1. Welche Sprache spricht die Person?</p>
+    <p>Welche Sprache spricht die Person?</p>
     <input id="v1">
 
-    <p>2. Wie alt ist die Person?</p>
-    <input id="v2">
-
-    <button onclick="checkVideo()">Antwort prüfen</button>
+    <button onclick="checkVideo()">Prüfen</button>
     <p id="videoResult"></p>
-</div>
+  </div>
 
-<!-- DIALOGUE ----------------------- -->
-<div class="box">
-    <h2>💬 Dialog</h2>
-    <p><strong>Anna:</strong> Guten Tag! Ich heiße Anna. Wie heißt du?</p>
-    <p><strong>Tom:</strong> Ich heiße Tom. Woher kommst du?</p>
-    <p><strong>Anna:</strong> Ich komme aus Deutschland. Und du?</p>
-    <p><strong>Tom:</strong> Ich komme aus Indien.</p>
-</div>
-
-<!-- TEXT --------------------------- -->
-<div class="box">
-    <h2>📖 Leseverstehen</h2>
-    <p>
-        Hallo! Ich bin Maria und ich wohne in Berlin. Ich spreche Deutsch und Englisch.
-        Ich komme aus Spanien. Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.
-    </p>
-
-    <p><strong>Fragen zum Text:</strong></p>
-    <p>1. Wo wohnt Maria?</p>
-    <input id="r1">
-    <p>2. Welche Sprachen spricht sie?</p>
-    <input id="r2">
-
-    <button onclick="checkReading()">Antwort prüfen</button>
-    <p id="readingResult"></p>
-</div>
-
-<!-- VOCABULARY ----------------------- -->
-<div class="box">
-    <h2>📘 Wortschatz</h2>
-    <ul>
-        <li>kommen – to come</li>
-        <li>wohnen – to live</li>
-        <li>sprechen – to speak</li>
-        <li>der Name – name</li>
-        <li>das Land – country</li>
-    </ul>
-</div>
-
-<!-- EXERCISES ------------------------ -->
-<div class="box">
+  <!-- EXERCISES -->
+  <div class="card">
     <h2>📝 Übungen</h2>
-
-    <p>1. Ergänze: Ich ___ Sahad. (bin)</p>
+    <p>Ich ___ Sahad. (bin)</p>
     <input id="ex1">
 
-    <p>2. Wähle das richtige Wort:</p>
+    <p>Wähle die richtige Begrüßung:</p>
     <select id="ex2">
-        <option value="">-- auswählen --</option>
-        <option value="wrong">Danke</option>
-        <option value="correct">Guten Tag</option>
-        <option value="wrong">Bitte</option>
+      <option value="">– auswählen –</option>
+      <option value="wrong">Danke</option>
+      <option value="correct">Guten Tag</option>
+      <option value="wrong">Bitte</option>
     </select>
 
-    <button onclick="checkExercises()">Antwort prüfen</button>
+    <button onclick="checkExercises()">Prüfen</button>
     <p id="exerciseResult"></p>
+  </div>
+
+  <footer>
+    <a href="index.html">← Zurück zur Übersicht</a>
+  </footer>
+
 </div>
 
-<!-- JAVASCRIPT ---------------------- -->
 <script>
 function checkAudio() {
-    let s1 = document.getElementById("a1").value.toLowerCase().trim();
-    let s2 = document.getElementById("a2").value.toLowerCase().trim();
-    if (s1 === "anna" && s2 === "deutschland") {
-        document.getElementById("audioResult").innerHTML = "✔ Richtig!";
-        document.getElementById("audioResult").className = "correct";
-    } else {
-        document.getElementById("audioResult").innerHTML = "✘ Falsch. Versuch es noch einmal.";
-        document.getElementById("audioResult").className = "wrong";
-    }
+  let a1 = a1.value.toLowerCase().trim();
+  let a2 = a2.value.toLowerCase().trim();
+
+  if (a1 === "anna" && a2 === "deutschland") {
+    audioResult.textContent = "Richtig!";
+    audioResult.className = "correct";
+  } else {
+    audioResult.textContent = "Falsch. Versuche es nochmal.";
+    audioResult.className = "wrong";
+  }
 }
 
 function checkVideo() {
-    let s1 = document.getElementById("v1").value.toLowerCase().trim();
-    let s2 = document.getElementById("v2").value.toLowerCase().trim();
-    if (s1 === "deutsch" && s2 === "25") {
-        document.getElementById("videoResult").innerHTML = "✔ Richtig!";
-        document.getElementById("videoResult").className = "correct";
-    } else {
-        document.getElementById("videoResult").innerHTML = "✘ Falsch.";
-        document.getElementById("videoResult").className = "wrong";
-    }
-}
-
-function checkReading() {
-    let r1 = document.getElementById("r1").value.toLowerCase().trim();
-    let r2 = document.getElementById("r2").value.toLowerCase().trim();
-    if (r1 === "berlin" && r2.includes("deutsch") && r2.includes("englisch")) {
-        document.getElementById("readingResult").innerHTML = "✔ Richtig!";
-        document.getElementById("readingResult").className = "correct";
-    } else {
-        document.getElementById("readingResult").innerHTML = "✘ Falsch.";
-        document.getElementById("readingResult").className = "wrong";
-    }
+  if (v1.value.toLowerCase().trim() === "deutsch") {
+    videoResult.textContent = "Richtig!";
+    videoResult.className = "correct";
+  } else {
+    videoResult.textContent = "Falsch.";
+    videoResult.className = "wrong";
+  }
 }
 
 function checkExercises() {
-    let ex1 = document.getElementById("ex1").value.toLowerCase().trim();
-    let ex2 = document.getElementById("ex2").value;
-
-    if (ex1 === "bin" && ex2 === "correct") {
-        document.getElementById("exerciseResult").innerHTML = "✔ Alles richtig!";
-        document.getElementById("exerciseResult").className = "correct";
-    } else {
-        document.getElementById("exerciseResult").innerHTML = "✘ Einige Antworten sind falsch.";
-        document.getElementById("exerciseResult").className = "wrong";
-    }
+  if (ex1.value.toLowerCase().trim() === "bin" && ex2.value === "correct") {
+    exerciseResult.textContent = "Alles richtig!";
+    exerciseResult.className = "correct";
+  } else {
+    exerciseResult.textContent = "Einige Antworten sind falsch.";
+    exerciseResult.className = "wrong";
+  }
 }
 </script>
 
